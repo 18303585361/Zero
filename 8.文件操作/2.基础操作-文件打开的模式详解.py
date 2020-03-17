@@ -57,10 +57,10 @@
 '''
 # 读取操作
 ## 1.打开文件,创建了一个文件对象   参数1：文件路径    参数2：打开方式
-fp = open('./2.txt','x',encoding='utf-8')
+# fp = open('./2.txt','x',encoding='utf-8')
 
 ## 2.读取文件内容：使用文件对象  调用 read()   方法
-res = fp.read()
+# res = fp.read()
 # 如果文件不存在，则引发此错误：
 # FileNotFoundError: [Errno 2] No such file or directory: './3.txt'
 
@@ -68,7 +68,7 @@ res = fp.read()
 # FileExistsError: [Errno 17] File exists: './2.txt'
 
 ## 3.使用文件对象，调用 close()  方法关闭文件
-fp.close()
+# fp.close()
 
 
 
