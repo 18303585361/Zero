@@ -16,15 +16,15 @@
     作用：可以设置 repr 函数操作对象的结果
     参数：一个 self 接收当前对象
     返回值：必须有，而且必须是字符串类型
-    注意事项：
+    注意事项：正常情况下，如果没有 __str__ 方法， __repr__ 方法就会代替 __str__方法
 4. __bool__
-    触发机制：
-    作用：
-    参数：
-    返回值：
+    触发机制：当前使用 bool 函数转换当前对象时，自动触发。默认情况下，对象会转为True
+    作用：可以代替对象进行 bool 类型的转换，可以转换任何数据
+    参数：一个 self 接收对象
+    返回值：必须是一个 bool 类型的返回值
 '''
 class Demo():
-    listurl = [1,2,3]
+    listurl = []
 
     # 可以代替对象使用 len 函数，并返回一个制定的整型
     def __len__(self):
@@ -37,6 +37,9 @@ class Demo():
     def __repr__(self): # 可以代替 str 方法触发
         return '这是一个对象 repr'
 
+    def __bool__(self):
+        return bool(self.listurl)
+
 # 实例化对象
 obj = Demo()
 
@@ -46,7 +49,9 @@ obj = Demo()
 
 # print(obj)
 
-res = repr(obj)
+# res = repr(obj)
+
+res = bool(obj)
 print(res)
 
 
