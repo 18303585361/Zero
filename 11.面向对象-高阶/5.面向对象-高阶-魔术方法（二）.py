@@ -22,47 +22,63 @@
     作用：可以代替对象进行 bool 类型的转换，可以转换任何数据
     参数：一个 self 接收对象
     返回值：必须是一个 bool 类型的返回值
+5. __str__ 和 __repr__ 的区别
+    str 和 repr 的区别：
+        1.str 和 repr 函数都可以把其它类型的数据转为字符串
+        2.str 函数会把对象 转为 更适合人类阅读的形式
+          repr 函数会把对象 转为 解释器读取的形式
+        3.如果数据对象并没有更明显的区别的话，str 和 repr的结果是一样的
 '''
-class Demo():
-    listurl = []
-
-    # 可以代替对象使用 len 函数，并返回一个制定的整型
-    def __len__(self):
-        return len(self.listurl)
-
-    # 可以代替对象进行 str 或者 print 的字符串信息返回
-    def __str__(self):
-        return '<这是当前脚本中的一个 对象 str>'
-
-    def __repr__(self): # 可以代替 str 方法触发
-        return '这是一个对象 repr'
-
-    def __bool__(self):
-        return bool(self.listurl)
+# class Demo():
+#     listurl = []
+#
+#     # 可以代替对象使用 len 函数，并返回一个制定的整型
+#     def __len__(self):
+#         return len(self.listurl)
+#
+#     # 可以代替对象进行 str 或者 print 的字符串信息返回
+#     def __str__(self):
+#         return '<这是当前脚本中的一个 对象 str>'
+#
+#     def __repr__(self): # 可以代替 str 方法触发
+#         return '这是一个对象 repr'
+#
+#     def __bool__(self):
+#         return bool(self.listurl)
 
 # 实例化对象
-obj = Demo()
+# obj = Demo()
 
 # res = len(obj)
 # res = str(obj)
 # print(res)
-
 # print(obj)
-
 # res = repr(obj)
+# res = bool(obj)
+# print(res)
 
-res = bool(obj)
-print(res)
+# num = 521
+# r1 = str(num)
+# r2 = repr(num)
 
+# s = '521'
+# r1 = str(s)
+# r2 = repr(s)
+# print(r1,type(r1))
+# print(r2,type(r2))
 
-
-
-
-
-
-
-
-
+# class Demo():
+#     def __str__(self):
+#         return '123'
+#
+#     def __repr__(self):
+#         return '123'
+#
+# obj = Demo()
+# r1 = str(obj)
+# r2 = repr(obj)
+# print(r1,type(r1))
+# print(r2,type(r2))
 
 
 
